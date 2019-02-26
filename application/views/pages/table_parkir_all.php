@@ -17,6 +17,16 @@
       <div class="row">
         <div class="col-md-12">
         <div class="box box-info">
+          <div class="box-header with-border">
+              <h3 class="box-title"></h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                        title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+            </div>
             <div class="box-body">
               <?php if($this->session->flashdata()):?>
                 <div class="alert alert-success alert-dismissible" role="alert">
@@ -28,9 +38,9 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>ID Parkir</th>
                     <th>No Kendaraan</th>
                     <th>Jenis Kendaraan</th>
+                    <th>Kelengkapan</th>
                     <th>Tanggal</th>
                     <th>Waktu Masuk</th>
                     <th>Waktu Keluar</th>
@@ -43,9 +53,9 @@
                   <?php foreach ($dataParkirMasuk as $data) :?>
                   <tr>
                     <td><?= $no++ ?></td>
-                    <td><?= $data['id_parkir'] ?></td>
                     <td><?= $data['no_kendaraan']?></td>
                     <td><?= $data['jenis_kendaraan']?></td>
+                    <td><?= $data['kelengkapan']?></td>
                     <td><?= $data['tanggal']?></td>
                     <td><?= $data['waktu_masuk']?> WIB</td>
                     <td>
@@ -67,7 +77,8 @@
                     <td>
                       <center>
                         <a class="btn btn-primary btn-xs" href="<?php echo site_url();?>data_list/detail/<?= $data['id_parkir']?>"><span class="fa fa-eye"></span> Detail</a>
-                        <a class="btn btn-warning btn-xs" onClick="return confirm('Apakah anda yakin data ini akan di hapus secara permanen?');" href="<?php echo site_url();?>data_list/delete/<?= $data['id_parkir']?>"><span class="fa fa-close"></span> Hapus</a>
+                        <a class="btn btn-warning btn-xs" href="<?php echo site_url();?>data_list/edit/<?= $data['id_parkir']?>"><span class="fa fa-pencil"></span> Edit</a>
+                        <a class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin data ini akan di hapus secara permanen?');" href="<?php echo site_url();?>data_list/delete/<?= $data['id_parkir']?>"><span class="fa fa-close"></span> Delete</a>
                       </center>
                     </td>
                   </tr>

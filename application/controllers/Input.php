@@ -38,13 +38,21 @@ class Input extends CI_Controller {
 		$this->load->view('templates/footer.php');
 	}
 
-	public function inputData()
+	public function prosesInput()
 	{
 		$this->M_data->inputDataParkir();
 		$this->session->set_flashdata('flash', 'Di Input');
 
 		$key = str_replace(' ', '', $this->input->post('no_kendaraan'));
 		redirect('input/print/'.$key.'');
+	}
+
+	public function prosesEdit()
+	{
+		$this->M_data->editData();
+		$this->session->set_flashdata('flash', 'Di Ubah');
+
+		redirect('data_list');
 	}
 
 }

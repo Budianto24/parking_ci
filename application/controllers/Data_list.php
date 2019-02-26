@@ -50,4 +50,14 @@ class Data_list extends CI_Controller {
 		$this->load->view('pages/detail', $data);
 		$this->load->view('templates/footer.php');	
 	}
+
+	public function edit($id_parkir)
+	{
+		$data['title']    = 'Edit Data Parkir';
+		$data['databyid'] = $this->M_data->getDataById($id_parkir);
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('pages/edit_data', $data);
+		$this->load->view('templates/footer');
+	}
 }

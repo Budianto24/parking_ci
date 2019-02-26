@@ -28,6 +28,9 @@ class M_data extends CI_Model {
 		$data = [
 			"no_kendaraan"    => strtoupper(str_replace(' ', '', $this->input->post('no_kendaraan', true))),
 			"jenis_kendaraan" => $this->input->post('jenis_kendaraan', true),
+			"kelengkapan"     => implode(', ',$this->input->post('kelengkapan')),
+			"pembayaran"      => $this->input->post('pembayaran'),
+			"keterangan"      => $this->input->post('keterangan'),
 			"tanggal"         => $this->input->post('tanggal', true),
 			"waktu_masuk"     => $this->input->post('waktu_masuk', true),
 			"waktu_keluar"    => $this->input->post('waktu_keluar', true),
@@ -107,5 +110,27 @@ class M_data extends CI_Model {
 	{
 		$query = $this->db->query("SELECT jenis_kendaraan, COUNT(jenis_kendaraan) AS total FROM parkir GROUP BY jenis_kendaraan");
 		return $query->result_array();
+	}
+
+
+	public function editData()
+	{
+		if($data['jenis_kendaraan'] == 'Motor'){$biaya = '2000';}else{$biaya='5000';};
+		$data = [
+			"id_parkir"		  => $this->input->post('id_parkir'),
+			"no_kendaraan"    => strtoupper(str_replace(' ', '', $this->input->post('no_kendaraan', true))),
+			"jenis_kendaraan" => $this->input->post('jenis_kendaraan', true),
+			"kelengkapan"     => implode(', ',$this->input->post('kelengkapan')),
+			"pembayaran"      => $this->input->post('pembayaran'),
+			"keterangan"      => $this->input->post('keterangan'),
+			"tanggal"         => $this->input->post('tanggal', true),
+			"waktu_masuk"     => $this->input->post('waktu_masuk', true),
+			"waktu_keluar"    => $this->input->post('waktu_keluar', true),
+			"biaya"           => $biaya,
+			"status"          => $this->input->post('status', true)
+		];
+
+		$this->db->where('id_parkir', $this->input->post('id_parkir'));
+		$this->db->update('parkir', $data);
 	}
 }

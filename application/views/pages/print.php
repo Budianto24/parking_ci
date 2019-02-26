@@ -34,6 +34,9 @@
                           <p>Nomor Kendaraan</p>
                           <h3><?= $print['no_kendaraan']?></h3>
                           <br>
+                          <p>Kelengkapan</p>
+                          <h3><?= $print['kelengkapan']?></h3>
+                          <br>
                           <p>Tanggal</p>
                           <h3><?= $print['tanggal']?></h3>
                         </div>
@@ -41,9 +44,18 @@
                           <p>Jenis Kendaraan</p>
                           <h3><?= $print['jenis_kendaraan']?></h3>
                           <br>
+                          <p>Pembayaran</p>
+                          <h3><?= $print['pembayaran']?></h3>
+                          <br>
                           <p>Waktu Masuk</p>
                           <h3><?= $print['waktu_masuk']?> WIB</h3>
                         </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                        <p>Keterangan Tambahan</p>
+                        <h3><?= $print['keterangan']?></h3>
+                      </div>
                     </div>
                     <br>
                     <div class="row">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2019 at 02:28 AM
+-- Generation Time: Jul 22, 2019 at 08:43 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -32,6 +32,9 @@ CREATE TABLE `parkir` (
   `id_parkir` int(11) NOT NULL,
   `no_kendaraan` varchar(50) NOT NULL,
   `jenis_kendaraan` varchar(50) NOT NULL,
+  `kelengkapan` varchar(50) NOT NULL,
+  `pembayaran` varchar(50) NOT NULL,
+  `keterangan` text NOT NULL,
   `tanggal` varchar(50) NOT NULL,
   `waktu_masuk` varchar(50) NOT NULL,
   `waktu_keluar` varchar(50) NOT NULL,
@@ -43,10 +46,10 @@ CREATE TABLE `parkir` (
 -- Dumping data for table `parkir`
 --
 
-INSERT INTO `parkir` (`id_parkir`, `no_kendaraan`, `jenis_kendaraan`, `tanggal`, `waktu_masuk`, `waktu_keluar`, `biaya`, `status`) VALUES
-(5, 'B123QWE', 'Mobil', '25-Feb-2019', '00:39:04', '00:42:06', '5000', 'Keluar'),
-(6, 'Q546ZXC', 'Motor', '25-Feb-2019', '00:40:47', '', '5000', 'Masuk'),
-(7, 'B45735QW', 'Mobil', '25-Feb-2019', '00:44:55', '', '5000', 'Masuk');
+INSERT INTO `parkir` (`id_parkir`, `no_kendaraan`, `jenis_kendaraan`, `kelengkapan`, `pembayaran`, `keterangan`, `tanggal`, `waktu_masuk`, `waktu_keluar`, `biaya`, `status`) VALUES
+(1, 'B123QWE', 'Motor', 'SIM, STNK', 'Cash', '1 helm', '23-Jul-2019', '01:11:44', '01:13:46', '2000', 'Keluar'),
+(2, 'B234ASD', 'Motor', 'SIM, STNK', 'Transfer', 'Tidak ada', '23-Jul-2019', '01:16:56', '', '5000', 'Masuk'),
+(3, 'B345ZXC', 'Mobil', 'SIM, STNK', 'Cash', 'Tidak ada', '23-Jul-2019', '01:17:31', '', '5000', 'Masuk');
 
 -- --------------------------------------------------------
 
@@ -97,7 +100,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `parkir`
 --
 ALTER TABLE `parkir`
-  MODIFY `id_parkir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_parkir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`

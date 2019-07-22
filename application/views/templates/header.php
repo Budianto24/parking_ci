@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="refresh" content="300"/>
   <title><?= $title?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -105,7 +106,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <?php if($this->session->userdata('user_level') == '1') {?>
-          <li class="active">
+          <li>
           <a href="<?php echo site_url()?>dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>

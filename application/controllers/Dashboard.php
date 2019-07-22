@@ -30,7 +30,7 @@ class Dashboard extends CI_Controller {
 		$this->load->view('templates/footer.php');
 	}
 
-	public function print($no_kendaraan)
+	public function prints($no_kendaraan)
 	{
 		$data['title'] = 'Detail Data Parkir';
 
@@ -45,7 +45,7 @@ class Dashboard extends CI_Controller {
 	{
 		$this->M_data->inputDataParkir();
 		$this->session->set_flashdata('flash', 'Di Input');
-		redirect('dashboard/print/'.$this->input->post('no_kendaraan').'');
+		redirect('dashboard/prints/'.$this->input->post('no_kendaraan').'');
 	}
 
 	public function hapusData()

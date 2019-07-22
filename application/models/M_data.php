@@ -5,11 +5,9 @@ class M_data extends CI_Model {
 
 	public function getTotalData()
 	{
-		$date = date('d-M-Y');
-
-		$query['kendaraan_masuk'] = $this->db->select('count(status) as total')->where('status','Masuk')->where('tanggal',$date)->get('parkir')->row();
-		$query['kendaraan_keluar'] = $this->db->select('count(status) as total')->where('status','Keluar')->where('tanggal',$date)->get('parkir')->row();
-		$query['kendaraan'] = $this->db->select('count(status) as total')->where('tanggal',$date)->get('parkir')->row();
+		$query['kendaraan_masuk'] = $this->db->select('count(status) as total')->where('status','Masuk')->get('parkir')->row();
+		$query['kendaraan_keluar'] = $this->db->select('count(status) as total')->where('status','Keluar')->get('parkir')->row();
+		$query['kendaraan'] = $this->db->select('count(status) as total')->get('parkir')->row();
 
 		return $query;
 	}

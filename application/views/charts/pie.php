@@ -1,6 +1,6 @@
-<div id="pie1" height="200"></div>
+<div id="pie" height="200"></div>
   <script>
-    Highcharts.chart('pie1', {
+    Highcharts.chart('pie', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,

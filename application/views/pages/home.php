@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?= $title?><small>Last Update: <?= date('l, d F Y')?></small>
+        <?= $title?><small><?= date('l, d F Y')?></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo site_url('dashboard')?>"><i class="fa fa-dashboard"></i> <?= $title?></a></li>
@@ -93,7 +93,28 @@
               </div>
             </div>
             <div class="box-body">
-              <?php $this->load->view('charts/bar1')?>
+              <?php $this->load->view('charts/pie')?>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->  
+        </div>
+
+        <div class="col-md-6">
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-bar-chart"></i> Statik Data Kendaraan</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                        title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <?php $this->load->view('charts/bar')?>
             </div>
             <!-- /.box-body -->
           </div>

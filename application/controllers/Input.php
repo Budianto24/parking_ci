@@ -26,7 +26,7 @@ class Input extends CI_Controller {
 		$this->load->view('templates/footer.php');
 	}
 
-	public function print($no_kendaraan)
+	public function prints($no_kendaraan)
 	{
 		$data['title'] = 'Detail Data Parkir';
 
@@ -44,7 +44,7 @@ class Input extends CI_Controller {
 		$this->session->set_flashdata('flash', 'Di Input');
 
 		$key = str_replace(' ', '', $this->input->post('no_kendaraan'));
-		redirect('input/print/'.$key.'');
+		redirect('input/prints/'.$key.'');
 	}
 
 	public function prosesEdit()
